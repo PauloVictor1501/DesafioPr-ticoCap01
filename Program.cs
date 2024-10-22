@@ -64,6 +64,28 @@ class Program
                     Console.WriteLine($"Divisão: {resultados[5]}");
                 }
             }
+            if (int.Parse(chosenOption) == 2)
+            {
+                int cont = 0;
+
+                Console.WriteLine("Escreva a frase que deseja contar os caracteres:");
+
+                string? frase = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(frase))
+                {
+                    Console.WriteLine("Não foi inserido nenhuma frase!");
+                }
+                else
+                {
+                    foreach(char ch in frase)
+                    {
+                        cont++;
+                    }
+                    Console.WriteLine($"A frase possui {cont} caracteres.");
+                    string acabou = Console.ReadLine();
+                }
+            }
         }
     }
 }
