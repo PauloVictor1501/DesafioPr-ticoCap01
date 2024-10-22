@@ -83,8 +83,53 @@ class Program
                         cont++;
                     }
                     Console.WriteLine($"A frase possui {cont} caracteres.");
-                    string acabou = Console.ReadLine();
+                    string? acabou = Console.ReadLine();
                 }
+            }
+            if(int.Parse(chosenOption) == 3)
+            {
+                Console.WriteLine("Insira a placa do carro:");
+                string? placa = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(placa))
+                {
+                    Console.WriteLine("Não foi inserido nenhum dado");
+                }
+                else
+                {
+                    int count2 = 0;
+                    foreach (char ch2 in placa)
+                    {
+                        if (char.IsLetterOrDigit(ch2))
+                        {
+                            count2++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Placa não é válida");
+                            string? acabou = Console.ReadLine();
+                        }
+                    }
+                    if (count2 == 7)
+                    {
+
+                        if (char.IsLetter(placa[0]) && char.IsLetter(placa[1]) && char.IsLetter(placa[2]) && char.IsNumber(placa[3]) && char.IsNumber(placa[4]) && char.IsNumber(placa[5]) && char.IsNumber(placa[6]))
+                        {
+                            Console.WriteLine("Placa válida"); 
+                        }
+                        else
+                        {
+                            Console.WriteLine("Placa não é válida");
+                        }
+                        string? acabou = Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Placa não é válida");
+                        string? acabou = Console.ReadLine();
+                    }
+                }
+                
             }
         }
     }
